@@ -9,17 +9,19 @@ checker = 11000, for 3, 11000 & (1<<3) = 01000 not equal to zero hence character
 LEN = 256
 MIN_CHARACTER =chr(0)
 
-string1 = input()
-
-checker = 0
-flag =0
-for ch in string1:
-	arr_temp = ord(ch) - ord(MIN_CHARACTER)
-	if checker & (1 << arr_temp) is 0:
+def is_unique(string_A):
+	checker = 0
+	flag =0
+	for ch in string_A:
+		arr_temp = ord(ch) - ord(MIN_CHARACTER)
+		if checker & (1 << arr_temp) != 0:
+			return False	
 		checker += (1 << arr_temp)
-	else:
-		flag = -1
-if flag is -1:
+	return True
+
+
+A = input().strip()
+if is_unique(A) is False:
 	print("Not Unique")
 else:
 	print("Unique")

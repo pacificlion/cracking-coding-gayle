@@ -1,19 +1,22 @@
+#assuming 256 bit extended ascii character set
 LEN = 256
+#chr(i) is inbuilt python function that returns unicode character representing the integer i 
 MIN_CHARACTER =chr(0)
 
-string1 = input()
 
-#This array stores the count of characters
-arr = [int(0) for i in range (0, LEN +1)]
+def is_unique(string_A):
+	#This array stores the count of characters
+	arr = [int(0) for i in range (0, LEN +1)]
+	for ch in string_A:
+		arr_temp = ord(ch) - ord(MIN_CHARACTER)
+		if arr[arr_temp]  is 1:
+		    return False
+		arr[arr_temp] = 1
+	return True
 
-flag = 0
-for ch in string1:
-	arr_temp = ord(ch) - ord(MIN_CHARACTER)
-	if arr[arr_temp]  is 1:
-	    flag = -1
-	    break 
-	arr[arr_temp] = 1
-if flag is -1:
+
+A = input().strip()
+if is_unique(A) is False:
 	print("Not Unique")
 else:
 	print("Unique")
