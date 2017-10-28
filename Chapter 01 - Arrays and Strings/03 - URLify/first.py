@@ -27,3 +27,6 @@ def urlify(string_a, len_a):
 #to check output
 RESULT = urlify("Mr John Smith    ", 13)
 print(RESULT)
+
+RESULT = urlify("Mr Prashant Singh    ", 17)
+print(RESULT)
