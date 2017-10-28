@@ -33,3 +33,10 @@ def one_away(string_a, string_b):
     return True
 
 print(one_away("pile", "piles"))
+
+
+#test cases
+assert one_away("pile", "piles"), "Positive"
+assert one_away("pile", "pil"), "Positive"
+assert one_away("pile", "bile"), "Positive"
+assert not one_away("pile", "bike"), "Negative"
